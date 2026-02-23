@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabWorkNo3", "LabWorkNo3\LabWorkNo3.csproj", "{ED32501F-30EF-404B-AB92-AFB2CCCDD850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorWithUI", "CalculatorWithUI\CalculatorWithUI.csproj", "{455160B4-A236-408E-B39B-12FC85F3C206}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesNFigures", "ShapesNFigures\ShapesNFigures.csproj", "{DD1883CB-8CF0-47A2-AABA-9B643D9DFA3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employees", "Employees\Employees.csproj", "{4BF4E19F-D356-469D-8C19-0FE85E52EC72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devices", "Devices\Devices.csproj", "{CDAAEBDD-6F50-4540-94EC-375D70913833}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED32501F-30EF-404B-AB92-AFB2CCCDD850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED32501F-30EF-404B-AB92-AFB2CCCDD850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED32501F-30EF-404B-AB92-AFB2CCCDD850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED32501F-30EF-404B-AB92-AFB2CCCDD850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455160B4-A236-408E-B39B-12FC85F3C206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455160B4-A236-408E-B39B-12FC85F3C206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455160B4-A236-408E-B39B-12FC85F3C206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455160B4-A236-408E-B39B-12FC85F3C206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD1883CB-8CF0-47A2-AABA-9B643D9DFA3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD1883CB-8CF0-47A2-AABA-9B643D9DFA3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD1883CB-8CF0-47A2-AABA-9B643D9DFA3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD1883CB-8CF0-47A2-AABA-9B643D9DFA3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BF4E19F-D356-469D-8C19-0FE85E52EC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF4E19F-D356-469D-8C19-0FE85E52EC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF4E19F-D356-469D-8C19-0FE85E52EC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF4E19F-D356-469D-8C19-0FE85E52EC72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDAAEBDD-6F50-4540-94EC-375D70913833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDAAEBDD-6F50-4540-94EC-375D70913833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDAAEBDD-6F50-4540-94EC-375D70913833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDAAEBDD-6F50-4540-94EC-375D70913833}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal
