@@ -1,0 +1,233 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LabWorkNo6.Views.FirstAppWindow"
+        Title="Розрахунок проміжку"
+        
+        Width="800"               
+        Height="450"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+        
+        <Grid 
+            ColumnDefinitions="*,*,*,*" 
+            Margin="30" 
+            RowDefinitions="*, 3*">
+            
+            <StackPanel 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Spacing="20">
+                    
+                <StackPanel 
+                    Orientation="Horizontal" 
+                    Spacing="20">
+                    
+                    <TextBlock 
+                        Text="X1 min" 
+                        VerticalAlignment="Center">
+                    </TextBlock>
+                    
+                    <NumericUpDown 
+                        Name="X1Min"
+                        Minimum="-1000"
+                        Maximum="1000"
+                        Increment="0.1"
+                        FormatString="{}{0:0.00}"
+                        ShowButtonSpinner="False"
+                        Width="100"
+                        >
+                    </NumericUpDown>     
+                    
+                </StackPanel>
+                    
+                <StackPanel 
+                    Orientation="Horizontal" 
+                    Spacing="19">
+                    
+                    <TextBlock 
+                        Text="X2 min" 
+                        VerticalAlignment="Center">
+                    </TextBlock>
+                    
+                    <NumericUpDown 
+                        Name="X2Min"
+                        Minimum="-1000"
+                        Maximum="1000"
+                        Increment="0.1"
+                        FormatString="{}{0:0.00}"
+                        ShowButtonSpinner="False"
+                        Width="100">
+                    </NumericUpDown>
+                    
+                </StackPanel>
+                
+            </StackPanel>
+                
+            <StackPanel 
+                Grid.Row="0" 
+                Grid.Column="1" 
+                Spacing="20">
+                
+                <StackPanel 
+                    Orientation="Horizontal" 
+                    Spacing="20">
+                    <TextBlock 
+                        Text="X1 max" 
+                        VerticalAlignment="Center">
+                    </TextBlock>
+                
+                    <NumericUpDown 
+                        Name="X1Max" 
+                        Minimum="-1000"
+                        Maximum="1000"
+                        Increment="0.1"
+                        FormatString="{}{0:0.00}"
+                        ShowButtonSpinner="False"
+                        Width="100">
+                    </NumericUpDown>
+                    
+                </StackPanel>
+            
+                
+                <StackPanel 
+                    Orientation="Horizontal" 
+                    Spacing="19">
+                    <TextBlock 
+                        Text="X2 max" 
+                        VerticalAlignment="Center">
+                    </TextBlock>
+                    
+                    <NumericUpDown 
+                        Name="X2Max"  
+                        Minimum="-1000"
+                        Maximum="1000"
+                        Increment="0.1"
+                        FormatString="{}{0:0.00}"
+                        ShowButtonSpinner="False"
+                        Width="100">
+                    </NumericUpDown>
+                    
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel 
+                Grid.Row="0" 
+                Grid.Column="2" 
+                Spacing="20">
+                
+                <StackPanel 
+                    Orientation="Horizontal" 
+                    Spacing="20">
+                    
+                    <TextBlock Text="dX1" 
+                               VerticalAlignment="Center">
+                    </TextBlock>
+                        
+                    <NumericUpDown 
+                        Name="Dx1"  
+                        Minimum="0"
+                        Maximum="1000"
+                        Increment="0.1"
+                        FormatString="{}{0:0.00}"
+                        Watermark="1.00"
+                        ShowButtonSpinner="False"
+                        Width="100">
+                    </NumericUpDown>
+                    
+                </StackPanel>
+                
+                <StackPanel 
+                    Orientation="Horizontal" 
+                    Spacing="19">
+                    
+                    <TextBlock 
+                        Text="dX2" 
+                        VerticalAlignment="Center">
+                    </TextBlock>
+                    
+                    <NumericUpDown 
+                        Name="Dx2"
+                        Minimum="0"
+                        Maximum="1000"
+                        Increment="0.1"
+                        FormatString="{}{0:0.00}"
+                        Watermark="1.00"
+                        ShowButtonSpinner="False"
+                        Width="100">
+                    </NumericUpDown>
+                    
+                </StackPanel>
+                
+            </StackPanel>
+            
+            <DataGrid 
+                Grid.ColumnSpan="3" 
+                Grid.Column="0" 
+                Grid.Row="1"
+                FrozenColumnCount="1"
+                Name="ResultsMatrix"
+                AutoGenerateColumns="False"
+                IsReadOnly="True"
+                CanUserSortColumns="False"
+                GridLinesVisibility="All"
+                BorderThickness="1"
+                BorderBrush="Gray">
+                
+                <DataGrid.Styles>
+                    <Style Selector="DataGridCell TextBlock">
+                        <Setter Property="TextWrapping" Value="Wrap" />
+                        <Setter Property="Width" Value="100"></Setter>
+                    </Style>
+                </DataGrid.Styles>
+                
+            </DataGrid>
+                
+            <StackPanel 
+                Grid.Column="3" 
+                Grid.Row="1" 
+                Spacing="20" 
+                HorizontalAlignment="Center">
+                
+                <Button 
+                    Content="Розрахувати" 
+                    Width="110" 
+                    HorizontalContentAlignment="Center"
+                    Click="OnClick_GenerateMatrix">
+                </Button>
+                
+                <Button 
+                    Content="Очистити" 
+                    Width="110" 
+                    HorizontalContentAlignment="Center"
+                    Click="OnClick_ClearMatrix">
+                </Button>
+            </StackPanel>
+            
+            <StackPanel
+                Grid.Column="3"
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Spacing="20">
+                
+                <Button
+                    Content="Зберегти"
+                    Width="110"
+                    HorizontalContentAlignment="Center"
+                    Click="SaveMatrix_onClick">
+                </Button>
+                
+                <Button
+                    Content="Завантажити"
+                    Width="110"
+                    HorizontalContentAlignment="Center"
+                    Click="LoadMatrix_onClick">
+                </Button>
+            </StackPanel>
+            
+        </Grid>
+</Window>
+

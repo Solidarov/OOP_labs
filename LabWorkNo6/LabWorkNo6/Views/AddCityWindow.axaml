@@ -1,0 +1,213 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LabWorkNo6.Views.AddCityWindow"
+        Title="Додати нове місто"
+        
+        Width="500"               
+        Height="550"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+        
+        <StackPanel
+                Orientation="Vertical"
+                Spacing="20"
+                Margin="40 0 40 0"
+                HorizontalAlignment="Center">
+            
+            <TextBlock
+                Text="Інформація про нове місто"
+                FontSize="23"
+                Margin="20"
+                HorizontalAlignment="Center">
+            </TextBlock>
+            
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="20">
+                
+                <TextBlock
+                    Text="Назва"
+                    VerticalAlignment="Center"
+                    Width="140">
+                </TextBlock>
+                
+                <TextBox
+                    Width="140"
+                    Name="NameTextBox">
+                </TextBox>
+            </StackPanel>
+            
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="20">
+                
+                <TextBlock
+                    Text="Країна"
+                    VerticalAlignment="Center"
+                    Width="140">
+                </TextBlock>
+                
+                <TextBox
+                    Width="140"
+                    Name="CountryTextBox">
+                </TextBox>
+            </StackPanel>
+            
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="20">
+                
+                <TextBlock
+                    Text="Регіон"
+                    VerticalAlignment="Center"
+                    Width="140">
+                </TextBlock>
+                
+                <TextBox
+                    Width="140"
+                    Name="RegionTextBox">
+                </TextBox>
+            </StackPanel>
+            
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="20">
+                
+                <TextBlock
+                    Text="Кількість населення"
+                    VerticalAlignment="Center"
+                    Width="140">
+                </TextBlock>
+                
+                <NumericUpDown
+                    Minimum="0"
+                    Maximum="10000"
+                    Increment="0.1"
+                    FormatString="{}{0:0.00}"
+                    ShowButtonSpinner="False"
+                    Width="140"
+                    Watermark="0.00"
+                    Name="PopulationNumUpDown">
+                    
+                    <NumericUpDown.InnerRightContent>
+                        <TextBlock Text="тис." 
+                                   VerticalAlignment="Center" 
+                                   Margin="0,0,10,0" 
+                                   Opacity="0.5"/>
+                    </NumericUpDown.InnerRightContent>
+                    
+                </NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="20">
+                
+                <TextBlock
+                    Text="Річний дохід"
+                    VerticalAlignment="Center"
+                    Width="140">
+                </TextBlock>
+                
+                <NumericUpDown
+                    Minimum="0"
+                    Maximum="10000"
+                    Increment="0.1"
+                    FormatString="{}{0:0.00}"
+                    Watermark="0.00"
+                    ShowButtonSpinner="False"
+                    Width="140"
+                    Name="AnnualRevenueNumUpDown">
+                    
+                    <NumericUpDown.InnerLeftContent>
+                        <TextBlock Text="$" 
+                                   VerticalAlignment="Center" 
+                                   Margin="5,0,10,0" 
+                                   Opacity="0.5"/>
+                    </NumericUpDown.InnerLeftContent>
+                    
+                    <NumericUpDown.InnerRightContent>
+                        <TextBlock Text="млрд" 
+                                   VerticalAlignment="Center" 
+                                   Margin="0,0,10,0" 
+                                   Opacity="0.5"/>
+                    </NumericUpDown.InnerRightContent>
+                    
+                </NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="20">
+            
+                <TextBlock
+                    Text="Площа"
+                    VerticalAlignment="Center"
+                    Width="140">
+                </TextBlock>
+                
+                <NumericUpDown
+                    Minimum="0"
+                    Maximum="100000000"
+                    Increment="0.1"
+                    FormatString="{}{0:0.00}"
+                    Watermark="0.00"
+                    ShowButtonSpinner="False"
+                    Width="140"
+                    Name="AreaNumUpDown">
+                    
+                    <NumericUpDown.InnerRightContent>
+                        <TextBlock Text="км²" 
+                                   VerticalAlignment="Center" 
+                                   Margin="0,0,10,0" 
+                                   Opacity="0.5"/>
+                    </NumericUpDown.InnerRightContent>
+                    
+                </NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="20">
+            
+                <TextBlock
+                    Text="Має порт"
+                    VerticalAlignment="Center">
+                </TextBlock>
+                
+                <CheckBox
+                    Name="HasPortCheckBox">
+                </CheckBox>
+                
+                <TextBlock
+                    Text="Має аеропорт"
+                    VerticalAlignment="Center">
+                </TextBlock>
+                
+                <CheckBox
+                    Name="HasAirPortCheckBox">
+                </CheckBox>
+            </StackPanel>
+            
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="20"
+                HorizontalAlignment="Center">
+            
+                <Button
+                    Content="Додати місто"
+                    Click="AddCity_onClick">
+                </Button>
+                
+                <Button
+                    Content="Скасувати"
+                    Click="Cancel_onClick">
+                </Button>
+
+            </StackPanel>
+            
+        </StackPanel>
+</Window>

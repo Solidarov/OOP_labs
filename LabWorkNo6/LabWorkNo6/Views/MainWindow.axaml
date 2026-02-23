@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:LabWorkNo6.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="250"
+        x:Class="LabWorkNo6.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Вибір програми"
+        
+        Width="400"               
+        Height="250"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Grid RowDefinitions="Auto, *">
+        <StackPanel>
+            <TextBlock 
+                Text="Вітаємо в програмі"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                Margin="0, 30, 0, 0">
+            </TextBlock>
+            <TextBlock
+                       Text="Для початку, вибери одну із поданих програм"
+                       FontSize="15"
+                       HorizontalAlignment="Center"
+                       Margin="0, 30, 0, 0">
+            </TextBlock>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Spacing="20">
+            <Button Content="Розрахунок проміжку"
+                    x:Name="BtnApp1"
+                    Click="OpenFirstApp_onClick">
+            </Button>
+            <Button Content="Дані про міста"
+                    x:Name="BtnApp2"
+                    Click="OpenSecondApp_onClick">
+            </Button>
+        
+        </StackPanel>
+    </Grid>
+</Window>

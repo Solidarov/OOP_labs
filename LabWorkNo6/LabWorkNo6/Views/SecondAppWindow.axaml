@@ -1,0 +1,133 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:LabWorkNo6.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LabWorkNo6.Views.SecondAppWindow"
+        x:DataType="views:SecondAppWindow"
+        Title="Дані про міста"
+        
+        Width="880"               
+        Height="550"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+
+        <Grid
+                RowDefinitions="3*, *"
+                ColumnDefinitions="2*, *"
+                Margin="10" >
+                
+                <DockPanel
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2">
+                        
+                        <TextBlock
+                                Text="Дані про записані міста"
+                                HorizontalAlignment="Center"
+                                FontWeight="Bold"
+                                FontSize="18"
+                                DockPanel.Dock="Top"
+                                Margin="0,0,0,10">
+                        </TextBlock>
+                
+                        <DataGrid
+                                Name="CityTable"
+                                AutoGenerateColumns="False"
+                                IsReadOnly="True"
+                                ItemsSource="{Binding Cities} "
+                                FrozenColumnCount="1"
+                                GridLinesVisibility="All"
+                                BorderThickness="1"
+                                BorderBrush="Gray">
+                                <DataGrid.Columns>
+                                        <DataGridTextColumn
+                                                Header="Назва"
+                                                Binding="{Binding Name}">
+                                        </DataGridTextColumn>
+                                        
+                                        <DataGridTextColumn
+                                                Header="Країна"
+                                                Binding="{Binding Country}">
+                                        </DataGridTextColumn>
+                                        
+                                        <DataGridTextColumn
+                                                Header="Регіон"
+                                                Binding="{Binding Region}">
+                                        </DataGridTextColumn>
+                                        
+                                        <DataGridTextColumn
+                                                Header="Кількість населення"
+                                                Binding="{Binding Population}">
+                                        </DataGridTextColumn>
+                                        
+                                        <DataGridTextColumn
+                                                Header="Річний дохід"
+                                                Binding="{Binding AnnualRevenue}">
+                                        </DataGridTextColumn>
+                                        
+                                        <DataGridTextColumn
+                                                Header="Площа"
+                                                Binding="{Binding Area}">
+                                        </DataGridTextColumn>
+
+                                        <DataGridCheckBoxColumn
+                                                Header="Має порт"
+                                                Binding="{Binding HasPort}">
+                                        </DataGridCheckBoxColumn>
+                                        
+                                        <DataGridCheckBoxColumn
+                                                Header="Має аеропорт"
+                                                Binding="{Binding HasAirPort}">
+                                        </DataGridCheckBoxColumn>
+
+                                </DataGrid.Columns>
+                                
+                                <DataGrid.Styles>
+                                        <Style Selector="DataGridCell TextBlock">
+                                                <Setter Property="TextWrapping" Value="Wrap" />
+                                        </Style>
+                                </DataGrid.Styles>
+                        </DataGrid>
+                </DockPanel>
+                        
+                <StackPanel
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        Spacing="20"
+                        Margin="30">
+                        <Button
+                                Content="Зберегти"
+                                Click="SaveTable_onClick">
+                        </Button>        
+                        <Button
+                                Content="Завантажити"
+                                Click="LoadTable_onClick">
+                        </Button>     
+                </StackPanel>
+                
+                <StackPanel
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Spacing="20"
+                        Margin="30">
+                        
+                        <Button
+                                Content="Додати місто" 
+                                Click="OpenCityWindow_OnClick">
+                        </Button>
+                        <Button
+                                Content="Очистити"
+                                Click="ClearTable_onClick">
+                        </Button>
+                </StackPanel>
+               
+        </Grid>
+    
+    
+</Window>
