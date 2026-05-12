@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:LabWorkNo11.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+        x:Class="LabWorkNo11.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Title="Task Manager"
+        Width="400" Height="500">
+
+    <Design.DataContext>
+        <vm:MainViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="10">
+        <!-- Пошук -->
+        <StackPanel DockPanel.Dock="Top" Spacing="5" Margin="0,0,0,10">
+            <TextBlock Text="Пошук завдань:"/>
+            <TextBox Text="{Binding SearchText, Mode=TwoWay}" Watermark="Введіть назву..."/>
+        </StackPanel>
+
+        <!-- Кнопки керування -->
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button Content="Додати" Command="{Binding AddTaskCommand}" Background="LightGreen"/>
+            <Button Content="Редагувати" Command="{Binding EditTaskCommand}" Background="LightBlue"/>
+            <Button Content="Видалити" Command="{Binding DeleteTaskCommand}" Background="LightCoral"/>
+            <Button Content="Зберегти зміни" Command="{Binding SaveTasksCommand}" Background="LightGray"/>
+        </StackPanel>
+
+        <!-- Список завдань -->
+        <ListBox ItemsSource="{Binding FilteredTasks}" SelectedItem="{Binding SelectedTask}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Spacing="2">
+                        <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Description}" FontSize="12" Foreground="Gray"/>
+                        <CheckBox IsChecked="{Binding IsCompleted}" Content="Завершено"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</Window>
